@@ -2,7 +2,7 @@
 
 set -axe
 
-CONFIG_FILE="/opt/hlds/startup.cfg"h,
+CONFIG_FILE="/opt/hlds/startup.cfg"
 
 if [ -r "${CONFIG_FILE}" ]; then
     set +e
@@ -18,10 +18,12 @@ START_MAP="${START_MAP:-crossfire}"
 SERVER_NAME="${SERVER_NAME:-Half-life dedicated server}"
 SV_LAN="${SV_LAN:-0}"
 
+OPTIONS="-game valve +maxplayers ${MAXPLAYERS} +map ${START_MAP}"
+
 OPTIONS="-game valve\
+ +hostname \"${SERVER_NAME}\"\
  +maxplayers ${MAXPLAYERS}\
- +map ${START_MAP}\
- +hostname \"${SERVER_NAME}\"\"
+ +map ${START_MAP}"
 
 if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS="${OPTIONS} -norestart"

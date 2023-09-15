@@ -11,6 +11,9 @@ Files base getted from steam.
 1. First is need it execute each line separately, in the terminal, for install some system stuffs that is need it to run the server because is of 32 bits
 
 ```
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends ca-certificates
+sudo update-ca-certificates
 sudo dpkg --add-architecture i386
 sudo apt -y update
 sudo apt -y install lib32gcc-s1
@@ -44,11 +47,10 @@ docker run -d --name hlds\
  -p 27020:27020/udp\
  -p 27015:27015/udp\
  -p 27015:27015\
- -e SERVER_NAME="Half-life dedicated server"\
+ -e SERVER_NAME="My HL Server"\
  -e START_MAP="crossfire"\
  -e MAXPLAYERS="32"\
- -e SERVER_PASSWORD="secret"\
- -e RCON_PASSWORD="supersecret"\
+ -e RCON_PASSWORD="secret"\
  dapize/hlds:latest
 ```
 
@@ -57,4 +59,5 @@ Exists some optionals environments variables:
 ```
 RESTART_ON_FAIL => 0 or 1
 SV_LAN => 0 or 1
+SERVER_PASSWORD => anything
 ```
