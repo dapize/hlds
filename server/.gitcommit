@@ -1,0 +1,14 @@
+# If this commit is applied, It will...
+# <type>(<scope>): <subject>
+():
+
+# <body>
+# Details of the issue (What? Why?)
+
+
+# <footer>
+# Bitbucket Issues y/o Jira Issues
+# Example:
+# Jira Issue: HALT-761, HALT-762
+# Closes #34, #23, #32
+Issue #
