@@ -1,0 +1,14 @@
+version: "2"
+services:
+  hlds:
+    build: .
+    environment:
+      SERVER_NAME: "My HL Server "
+      START_MAP: "crossfire"
+      MAXPLAYERS: "32"
+      RCON_PASSWORD: "secret"
+    ports:
+      - 26900:26900/udp
+      - 27020:27020/udp
+      - 27015:27015/udp
+      - 27015:27015/tcp

@@ -1,4 +1,4 @@
-FROM debian:12.1-slim
+FROM debian:bookworm
 
 LABEL creator "Daniel P Z <danielpz@outlook.com>"
 
