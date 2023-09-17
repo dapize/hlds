@@ -18,12 +18,7 @@ START_MAP="${START_MAP:-crossfire}"
 SERVER_NAME="${SERVER_NAME:-Half-life dedicated server}"
 SV_LAN="${SV_LAN:-0}"
 
-OPTIONS="-game valve +maxplayers ${MAXPLAYERS} +map ${START_MAP}"
-
-OPTIONS="-game valve\
- +hostname \"${SERVER_NAME}\"\
- +maxplayers ${MAXPLAYERS}\
- +map ${START_MAP}"
+OPTIONS="-game valve  +hostname \"${SERVER_NAME}\" +maxplayers ${MAXPLAYERS} +map ${START_MAP}"
 
 if [ -z "${RESTART_ON_FAIL}" ]; then
     OPTIONS="${OPTIONS} -norestart"

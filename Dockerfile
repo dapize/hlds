@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 RUN update-ca-certificates
 RUN dpkg --add-architecture i386
 RUN apt -y update
-RUN apt -y install lib32gcc-s1
+RUN apt -y install lib32gcc-s1 lib32stdc++6
 RUN mkdir -p /opt/hlds
 
 WORKDIR /opt/hlds
