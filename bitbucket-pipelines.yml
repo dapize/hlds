@@ -7,8 +7,20 @@ image: atlassian/default-image:3
 
 clone:
   depth: full
+
 pipelines:
-  default:
-    - step:
-        script:
-          - git push --mirror git@github.com:dapize/hlds.git
+  branches:
+    main:
+      - step:
+          name: Pushing to github repo
+          script:
+            - echo "Uploading to github repo"
+            - git push --mirror git@github.com:dapize/hlds.git
+      - step:
+          name: Pushing to Dockerhub
+          script:
+            - docker build -t dapize/hlds:latest --no-cache .
+            - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+            - docker push dapize/hlds:latest
+          services:
+            - docker
