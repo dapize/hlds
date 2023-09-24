@@ -21,5 +21,5 @@ EXPOSE 27015/udp
 EXPOSE 26900/udp
 EXPOSE 27020/udp
 
-ENTRYPOINT [ "/opt/hlds/hlds_run.sh" ]
+CMD [ "/opt/hlds/hlds_run.sh" ]
 
